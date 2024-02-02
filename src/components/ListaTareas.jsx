@@ -4,9 +4,13 @@ import ItemTarea from "./ItemTarea";
 const ListaTareas = (props) => {
   return (
     <ListGroup>
-      {props.tareas.map((elemTarea, posicTarea) => 
-        <ItemTarea key={posicTarea} nombreTarea={elemTarea}></ItemTarea>
-      )}
+      {props.tareas.map((elemTarea, posicTarea) => (
+        <ItemTarea
+          key={posicTarea}
+          nombreTarea={elemTarea}
+          borrarTareas={props.borrarTareas}
+        ></ItemTarea>
+      ))}
     </ListGroup>
   );
 };
