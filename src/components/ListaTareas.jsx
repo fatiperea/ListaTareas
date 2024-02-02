@@ -5,7 +5,7 @@ const ListaTareas = (props) => {
   return (
     <ListGroup>
       {props.tareas.map((elemTarea, posicTarea) => 
-        <ItemTarea key={posicTarea}></ItemTarea>
+        <ItemTarea key={posicTarea} nombreTarea={elemTarea}></ItemTarea>
       )}
     </ListGroup>
   );
