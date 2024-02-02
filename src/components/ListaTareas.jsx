@@ -1,12 +1,14 @@
-import { ListGroup } from 'react-bootstrap';
-import ItemTarea from './ItemTarea';
+import { ListGroup } from "react-bootstrap";
+import ItemTarea from "./ItemTarea";
 
-const ListaTareas = () => {
-    return (
-        <ListGroup>
-            <ItemTarea></ItemTarea> 
-        </ListGroup>
-    );
+const ListaTareas = (props) => {
+  return (
+    <ListGroup>
+      {props.tareas.map((elemTarea, posicTarea) => 
+        <ItemTarea key={posicTarea}></ItemTarea>
+      )}
+    </ListGroup>
+  );
 };
 
 export default ListaTareas;
