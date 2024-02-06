@@ -1,10 +1,17 @@
 import { Button, Form } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ListaTareas from "./ListaTareas";
 
 const FormTareas = () => {
   const [tarea, setTarea] = useState("");
-  const [tareas, setTareas]= useState([]);
+  const tareasLS= JSON.parse(localStorage.getItem("listaTareas")) || [];
+  const [tareas, setTareas]= useState([tareasLS]);
+
+  //useEffect(() =>{}) montaje y actualizacion, solo montaje: agrego ,[] vacio al final de la fc
+
+  useEffect(() =>{
+    localStorage.setItem("listaTareas", JSON.stringify(tareas))
+  })
 
   const handleSubmit = (e) => {
     e.preventDefault();
