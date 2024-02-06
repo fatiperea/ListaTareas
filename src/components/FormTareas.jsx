@@ -35,7 +35,7 @@ const FormTareas = () => {
             value={tarea}
           />
           <Button variant="info" className="mx-2" type="submit">
-            Agregar tarea
+            Agregar
           </Button>
         </Form.Group>
       </Form>
